@@ -6,10 +6,12 @@ A clean, categorized collection of LeetCode problem solutions written in Python 
 
 ## 📊 Problem List
 
+<!-- PROBLEM_TABLE_START -->
 | #    | Title                                                                 | Difficulty | Solution                                      | Time   | Memory | Tags                     |
 |:----:|------------------------------------------------------------------------|:----------:|-----------------------------------------------|:------:|:------:|--------------------------|
 | 2131 | [Longest Palindrome by Concatenating](https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/) | 🟡 Medium | [View](Medium/2131-longest-palindrome.py)     | O(n)   | O(n)   | `hashmap`, `palindrome`, `string`, `greedy` |
 | 2150 | [Find All Lonely Numbers in the Array](https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/) | 🟡 Medium | [View](Medium/2150-lonely-numbers.py) | O(n)   | O(n)   | `array`, `hashmap`, `counting` |
+<!-- PROBLEM_TABLE_END -->
 
 ---
 
