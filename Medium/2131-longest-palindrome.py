@@ -1,6 +1,8 @@
 """
 2131. Longest Palindrome by Concatenating Two Letter Words
 
+url: https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/
+
 #tag: hashmap, palindrome, string, greedy
 
 Approach:

@@ -31,6 +31,12 @@ def extract_metadata(filepath):
     number = int(match.group(1))
     title = match.group(2)
 
+    # Link to the problem
+    link_line = next((l for l in lines if l.lower().startswith("url:")), None)
+    if not link_line:
+        return None
+    url = link_line.split(":", 1)[1].strip()
+
     # Tags
     tags_line = next((l for l in lines if l.lower().startswith("#tag")), '')
     tags_line = re.sub(r"#tags?:", "", tags_line, flags=re.IGNORECASE)
@@ -43,7 +49,7 @@ def extract_metadata(filepath):
     return {
         'number': number,
         'title': title,
-        'slug': title.lower().replace(' ', '-'),
+        'url': url,
         'filepath': filepath,
         'difficulty': Path(filepath).parts[0],
         'time': time,
@@ -67,12 +73,11 @@ def collect_problems():
 # Generate markdown table for problem list
 def generate_table(problem_list):
     header = "| # | Title | Difficulty | Solution | Time | Memory | Tags |"
-    sep = "|--:|:------|:-----------|:---------|:-----:|:------:|:-----|"
+    sep = "|---:|:-----------|:------------|:----------|:------:|:-------:|:-----------|"
     rows = [header, sep]
 
     for p in problem_list:
-        link = f"https://leetcode.com/problems/{p['slug']}/"
-        title_md = f"[{p['title']}]({link})"
+        title_md = f"[{p['title']}]({p['url']})"
         path = f"{p['difficulty']}/{Path(p['filepath']).name}"
         solution_md = f"[View]({path})"
 

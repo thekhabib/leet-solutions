@@ -1,6 +1,8 @@
 """
 2150. Find All Lonely Numbers in the Array
 
+url: https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/
+
 #tags: arrays, hash table, counting
 
 Approach:
