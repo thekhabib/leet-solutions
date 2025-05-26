@@ -1,26 +1,26 @@
 """
 2131. Longest Palindrome by Concatenating Two Letter Words
 
-url: https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/
+URL: https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/
 
-#tag: hashmap, palindrome, string, greedy
+#tags: hashmap, palindrome, string, greedy
 
 Approach:
-- Count frequency of all words
-- Match reverse words
-- Handle center palindromes
+- Count the frequency of each two-letter word using a hash map.
+- For each word, try to pair it with its reverse (e.g., 'ab' with 'ba').
+- Special handling for palindromic words like 'aa', 'bb', etc. — keep one in the center if there's an odd count.
 
-Time: O(n)
-Space: O(n)
+Time: O(n), we iterate over the list once and then over the unique words (which is at most 676, i.e., 26*26).
+Space: O(n), for storing word frequencies in a hash map.
 """
+
+from typing import List
+from collections import Counter
 
 class Solution:
     def longestPalindrome(self, words: List[str]) -> int:
 
-        freq = {}
-        for word in words:
-            freq[word] = freq.get(word, 0) + 1
-        
+        freq = Counter(words)
         pairs = 0
         central = 0
 

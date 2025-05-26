@@ -1,27 +1,27 @@
 """
 2150. Find All Lonely Numbers in the Array
 
-url: https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/
+URL: https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/
 
 #tags: arrays, hash table, counting
 
 Approach:
-1. Count number frequencies
-2. Check for each number:
-   - Appears exactly once
-   - No adjacent numbers (x-1, x+1) exist
+- Use a hash table (Counter) to count the frequency of each number.
+- Iterate through the list and check for each number:
+  - It appears exactly once.
+  - Neither its predecessor (num - 1) nor its successor (num + 1) is present.
 
-Time: O(n)
-Space: O(n)
+Time: O(n), where n is the number of elements in the input list.
+Space: O(n), for storing the frequency count of elements.
 """
+
+from typing import List
+from collections import Counter
 
 class Solution:
     def findLonely(self, nums: List[int]) -> List[int]:
+        freq = Counter(nums)
         res = []
-        freq = {}
-
-        for num in nums:
-            freq[num] = freq.get(num, 0) + 1
         
         for num in nums:
             if freq[num] == 1 and freq.get(num - 1, 0) + freq.get(num + 1, 0) == 0:
