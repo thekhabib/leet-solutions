@@ -1,4 +1,13 @@
 # 🧠 LeetCode Solutions in Python
+<p align="center">
+  <img src="https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/-LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black" />
+  <img src="https://img.shields.io/badge/-Algorithms-0E7FC0?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/-Clean%20Code-3DDC84?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/-DSA%20Practice-007ACC?style=for-the-badge" />
+</p>
+
+---
 
 A clean, categorized collection of LeetCode problem solutions written in Python with a focus on readability, optimality, and clean code principles.
 
@@ -12,18 +21,6 @@ A clean, categorized collection of LeetCode problem solutions written in Python 
 | 2131 | [Longest Palindrome by Concatenating](https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/) | 🟡 Medium | [View](Medium/2131-longest-palindrome.py)     | O(n)   | O(n)   | `hashmap`, `palindrome`, `string`, `greedy` |
 | 2150 | [Find All Lonely Numbers in the Array](https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/) | 🟡 Medium | [View](Medium/2150-lonely-numbers.py) | O(n)   | O(n)   | `array`, `hashmap`, `counting` |
 <!-- PROBLEM_TABLE_END -->
-
----
-
-## 🧰 Tech Stack
-
-<p align="center">
-  <img src="https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/-LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black" />
-  <img src="https://img.shields.io/badge/-Algorithms-0E7FC0?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/-Clean%20Code-3DDC84?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/-DSA%20Practice-007ACC?style=for-the-badge" />
-</p>
 
 ---
 
