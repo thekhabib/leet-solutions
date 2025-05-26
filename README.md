@@ -1,5 +1,5 @@
 # 🧠 LeetCode Solutions in Python
-<p align="center">
+<p>
   <img src="https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/-LeetCode-FFA116?style=for-the-badge&logo=LeetCode&logoColor=black" />
   <img src="https://img.shields.io/badge/-Algorithms-0E7FC0?style=for-the-badge" />
