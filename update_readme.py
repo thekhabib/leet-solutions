@@ -32,8 +32,9 @@ def extract_metadata(filepath):
     title = match.group(2)
 
     # Tags
-    tags_line = next((l for l in lines if l.startswith("#tag")), '')
-    tags = [tag.strip() for tag in tags_line.replace("#tag:", "").split(',') if tag.strip()]
+    tags_line = next((l for l in lines if l.lower().startswith("#tag")), '')
+    tags_line = re.sub(r"#tags?:", "", tags_line, flags=re.IGNORECASE)
+    tags = [tag.strip() for tag in tags_line.split(',') if tag.strip()]
 
     # Time and space complexity
     time = next((l.split(':')[1].strip() for l in lines if l.lower().startswith('time')), 'N/A')
@@ -52,7 +53,7 @@ def extract_metadata(filepath):
 
 # Find all problems
 def collect_problems():
-    problems = []
+    problem_list = []
     for difficulty in ['Easy', 'Medium', 'Hard']:
         folder = Path(difficulty)
         if not folder.exists():
@@ -60,31 +61,39 @@ def collect_problems():
         for file in folder.glob("*.py"):
             meta = extract_metadata(str(file))
             if meta:
-                problems.append(meta)
-    return sorted(problems, key=lambda x: x['number'])
+                problem_list.append(meta)
+    return sorted(problem_list, key=lambda x: x['number'])
 
 # Generate markdown table for problem list
-def generate_table(problems):
+def generate_table(problem_list):
     header = "| # | Title | Difficulty | Solution | Time | Memory | Tags |"
-    sep =     "|--:|:------|:-----------|:---------|:-----:|:------:|:-----|"
+    sep = "|--:|:------|:-----------|:---------|:-----:|:------:|:-----|"
     rows = [header, sep]
 
-    for p in problems:
+    for p in problem_list:
         link = f"https://leetcode.com/problems/{p['slug']}/"
         title_md = f"[{p['title']}]({link})"
-        path = f"{p['difficulty']}/{str(Path(p['filepath']).name)}"
+        path = f"{p['difficulty']}/{Path(p['filepath']).name}"
         solution_md = f"[View]({path})"
-        tags_md = ', '.join(p['tags'])
-        rows.append(f"| {p['number']} | {title_md} | {p['difficulty']} | {solution_md} | {p['time']} | {p['space']} | {tags_md} |")
+
+        # Map difficulty to label
+        difficulty_md = DIFFICULTY_MAP.get(p['difficulty'], p['difficulty'])
+
+        # Tags in backtick markdown format
+        tags_md = ', '.join(f"`{tag}`" for tag in p['tags'])
+
+        rows.append(
+            f"| {p['number']} | {title_md} | {difficulty_md} | {solution_md} | {p['time']} | {p['space']} | {tags_md} |"
+        )
 
     return '\n'.join(rows)
 
 # Inject generated table into README
-def update_readme(problems):
+def update_readme(problem_list):
     with open("README.md", "r", encoding="utf-8") as f:
         content = f.read()
 
-    table_md = generate_table(problems)
+    table_md = generate_table(problem_list)
 
     # Jadvalni <!-- PROBLEM_TABLE_START --> va <!-- PROBLEM_TABLE_END --> orasiga joylashtirish
     new_content = re.sub(
