@@ -73,7 +73,7 @@ def collect_problems():
 # Generate markdown table for problem list
 def generate_table(problem_list):
     header = "| # | Title | Difficulty | Solution | Time | Memory | Tags |"
-    sep = "|---:|:-----------|:------------|:----------|:------:|:-------:|:-----------|"
+    sep = "|:---:|:-----------|:-------------:|:----------:|:------:|:-------:|:-----------|"
     rows = [header, sep]
 
     for p in problem_list:
