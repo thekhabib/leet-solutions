@@ -7,8 +7,6 @@
   <img src="https://img.shields.io/badge/-DSA%20Practice-007ACC?style=for-the-badge" />
 </p>
 
----
-
 A clean, categorized collection of LeetCode problem solutions written in Python with a focus on readability, optimality, and clean code principles.
 
 ---
