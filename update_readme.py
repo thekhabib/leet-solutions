@@ -85,9 +85,11 @@ def update_readme(problems):
         content = f.read()
 
     table_md = generate_table(problems)
+
+    # Jadvalni <!-- PROBLEM_TABLE_START --> va <!-- PROBLEM_TABLE_END --> orasiga joylashtirish
     new_content = re.sub(
-        r'(## \ud83d\udcc8 Problem List\n\n)(.*?)(\n\n##)',
-        f"\\1{table_md}\\3",
+        r'<!-- PROBLEM_TABLE_START -->(.*?)<!-- PROBLEM_TABLE_END -->',
+        f'<!-- PROBLEM_TABLE_START -->\n{table_md}\n<!-- PROBLEM_TABLE_END -->',
         content,
         flags=re.DOTALL
     )
