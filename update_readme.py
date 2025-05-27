@@ -51,8 +51,8 @@ def extract_metadata(filepath: str) -> dict | None:
     url = url_line.split(":", 1)[1].strip()
 
     # 3. Tags
-    tags_line = next((l for l in lines if l.lower().startswith("#tag")), "")
-    tags_clean = re.sub(r"#tags?:", "", tags_line, flags=re.IGNORECASE)
+    tags_line = next((l for l in lines if l.lower().startswith("tags:")), "")
+    tags_clean = re.sub(r"tags?:", "", tags_line, flags=re.IGNORECASE)
     tags = [tag.strip() for tag in tags_clean.split(",") if tag.strip()]
 
     # 4. Complexities
@@ -101,7 +101,7 @@ def generate_table(problem_list):
         key=lambda x: (difficulty_order.get(x['difficulty'], 99), x['number'])
     )
 
-    header = "| # | Title | Difficulty | Code | Time | Memory | Tags |"
+    header = "| # | Title | Difficulty | Code | Time | Memory | Topics |"
     sep = "|:---:|:--------|:------------:|:--------:|:------:|:--------:|:----------|"
     rows = [header, sep]
 

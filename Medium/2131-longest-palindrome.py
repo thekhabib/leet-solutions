@@ -3,7 +3,7 @@
 
 URL: https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/
 
-#tags: hashmap, palindrome, string, greedy
+Tags: array, hash table, string, counting, greedy
 
 Approach:
 - Count the frequency of each two-letter word using a hash map.

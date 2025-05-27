@@ -3,7 +3,7 @@
 
 URL: https://leetcode.com/problems/find-words-containing-character/
 
-#tags: string, array
+Tags: string, array
 
 Approach:
 - Iterate through each word in the list.

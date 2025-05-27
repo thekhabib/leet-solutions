@@ -3,7 +3,7 @@
 
 URL: https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/
 
-#tags: arrays, hash table, counting
+Tags: arrays, hash table, counting
 
 Approach:
 - Use a hash table (Counter) to count the frequency of each number.
