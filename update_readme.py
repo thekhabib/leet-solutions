@@ -53,7 +53,7 @@ def extract_metadata(filepath: str) -> dict | None:
     # 3. Tags
     tags_line = next((l for l in lines if l.lower().startswith("tags:")), "")
     tags_clean = re.sub(r"tags?:", "", tags_line, flags=re.IGNORECASE)
-    tags = [tag.strip() for tag in tags_clean.split(",") if tag.strip()]
+    tags = [f'`{tag.strip()}`' for tag in tags_clean.split(",") if tag.strip()]
 
     # 4. Complexities
     time_line = next((l for l in lines if l.lower().startswith("time")), "")
