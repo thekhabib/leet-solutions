@@ -14,7 +14,7 @@ A clean, categorized collection of LeetCode problem solutions written in Python 
 ## 📊 Problem List
 
 <!-- PROBLEM_TABLE_START -->
-**Total Problems: 8** &nbsp;&nbsp; 🟢 `4` &nbsp;&nbsp; 🟡 `3` &nbsp;&nbsp; 🔴 `1`
+**Total Problems: 9** &nbsp;&nbsp; 🟢 `4` &nbsp;&nbsp; 🟡 `4` &nbsp;&nbsp; 🔴 `1`
 
 | # | Title | Difficulty | Code | Time | Memory | Topics |
 |:---:|:--------|:------------:|:--------:|:------:|:--------:|:----------|
@@ -25,7 +25,8 @@ A clean, categorized collection of LeetCode problem solutions written in Python 
 | 1432 | [Max Difference You Can Get From Changing an Integer](https://leetcode.com/problems/max-difference-you-can-get-from-changing-an-integer/) | <span style="color:orange">Medium</span> | [View](Medium/1432-max-diff-changing-digit-an-number.py) | `O(d)` | `O(d)` | `math`, `greedy` |
 | 2131 | [Longest Palindrome by Concatenating Two Letter Words](https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/) | <span style="color:orange">Medium</span> | [View](Medium/2131-longest-palindrome.py) | `O(n)` | `O(n)` | `array`, `hash table`, `string`, `counting`, `greedy` |
 | 2150 | [Find All Lonely Numbers in the Array](https://leetcode.com/problems/find-all-lonely-numbers-in-the-array/) | <span style="color:orange">Medium</span> | [View](Medium/2150-lonely-numbers.py) | `O(n)` | `O(n)` | `arrays`, `hash table`, `counting` |
-| 2081 | [Sum of k-Mirror Numbers](https://leetcode.com/problems/sum-of-k-mirror-numbers/) | <span style="color:red">Hard</span> | [View](Hard/2081_sum_of_kth_mirror_numbers.py) | `O(T * log N)` | `O(1)` | `math`, `enumeration`, `base-conversion`, `backtracking` |
+| 3085 | [Minimum Deletions to Make String K-Special](https://leetcode.com/problems/minimum-deletions-to-make-string-k-special/) | <span style="color:orange">Medium</span> | [View](Medium/3085-minimum-deletions-to-make-string-kth-special.py) | `O(n^2)` | `O(1)` | `hash table`, `greedy`, `sorting`, `string`, `counting` |
+| 2081 | [Sum of k-Mirror Numbers](https://leetcode.com/problems/sum-of-k-mirror-numbers/) | <span style="color:red">Hard</span> | [View](Hard/2081-sum-of-kth-mirror-numbers.py) | `O(T * log N)` | `O(1)` | `math`, `enumeration`, `base-conversion`, `backtracking` |
 <!-- PROBLEM_TABLE_END -->
 
 ---
